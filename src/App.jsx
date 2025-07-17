@@ -1,35 +1,38 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react';
+import { Github, ExternalLink, Rocket } from 'lucide-react';
+import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
+    <div className="container">
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
+        <div className="icon-title">
+          <div className="icon-circle">
+            <Rocket size={24} color="#fff" />
+          </div>
+          <h1>React + Vite AWS Deployment</h1>
+        </div>
+
         <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
+          This page demonstrates an automated deployment using a <strong>CI/CD pipeline</strong> powered by
+          GitHub Actions and <strong>AWS S3 static website hosting</strong>.
         </p>
+
+        <p>Go to my GitHub for more details:</p>
+
+        <a
+          className="github-button"
+          href="https://github.com/aaryankumar19/devops-project"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Github size={20} />
+          <span>GitHub</span>
+          <ExternalLink size={16} />
+        </a>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </div>
+  );
 }
 
-export default App
+export default App;
