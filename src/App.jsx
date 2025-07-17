@@ -1,10 +1,27 @@
-import React from 'react';
-import { Github, ExternalLink, Rocket } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Github, ExternalLink, Rocket, Sun, Moon } from 'lucide-react';
 import './App.css';
 
 function App() {
+  const [darkMode, setDarkMode] = useState(false);
+
+  useEffect(() => {
+    document.body.className = darkMode ? 'dark' : '';
+  }, [darkMode]);
+
   return (
     <div className="container">
+      <div className="toggle-wrapper">
+        <button
+          onClick={() => setDarkMode(!darkMode)}
+          className="toggle-button"
+          title="Toggle theme"
+        >
+          {darkMode ? <Sun size={18} /> : <Moon size={18} />}
+          <span>{darkMode ? 'Light Mode' : 'Dark Mode'}</span>
+        </button>
+      </div>
+
       <div className="card">
         <div className="icon-title">
           <div className="icon-circle">
