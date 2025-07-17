@@ -1,5 +1,7 @@
 # ⚡️ React + Vite Static Website Deployment with GitHub Actions & AWS S3
 
+<img src="https://github.com/aaryankumar19/devops-project/blob/main/images/image2.png">
+
 This project demonstrates a **CI/CD pipeline** for deploying a Vite + React app to **Amazon S3** using **GitHub Actions**.
 
 ## 📌 Overview
