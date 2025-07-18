@@ -6,7 +6,10 @@ Live Deployment at : http://production-bucket-aaryankumar19.s3-website-us-east-1
 
 This project demonstrates a **CI/CD pipeline** for deploying a Vite + React app to **Amazon S3** using **GitHub Actions**.
 
-<img src="https://github.com/aaryankumar19/devops-project/blob/main/images/architecture.png">
+<figure>
+  <img src="https://github.com/aaryankumar19/devops-project/blob/main/images/architecture.png" alt="draw.io ararchitecture" style="width:100%">
+  <figcaption>Devops project basic architecture</figcaption>
+</figure>
 
 ## 📌 Overview
 
@@ -18,7 +21,7 @@ Every time you push code to the `main` branch, GitHub Actions automatically:
 
 ## 🛠️ Setup Steps
 
-### 1. 📦 Create S3 Bucket
+### 1. Create S3 Bucket
 1. Create a new S3 bucket in AWS Console
 2. Go to **Properties** → **Static website hosting**
 3. Enable static website hosting
@@ -51,13 +54,13 @@ Every time you push code to the `main` branch, GitHub Actions automatically:
 
 ```
 
-### 2. 🔐 Create IAM User
+### 2. Create IAM User
 1. Go to **IAM** → **Users** → **Create user**
 2. Give programmatic access (Access key)
 3. Attach **AmazonS3FullAccess** policy
 4. Save the **Access Key ID** and **Secret Access Key**
 
-### 3. 🧪 Add GitHub Secrets
+### 3. Add GitHub Secrets
 1. Go to your repository → **Settings** → **Secrets and variables** → **Actions**
 2. Add these repository secrets:
 
@@ -82,4 +85,7 @@ http://your-bucket-name.s3-website-your-region.amazonaws.com
 or
 
 To get this link, head to your Buckets > your-bucket > Properties.
-In static website hosting, click on the link.
+In static website hosting, click on the bucket link.
+
+## ⚠️ Attention
+I have used [bun](https://bun.com/) instead of npm, because with npm I was facing some issues creating a vite application. Bun is a npm alternative and a bit faster than the npm. I works the same way as npm. I have also added the automatic installation of bun in github workflow.
