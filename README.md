@@ -7,9 +7,17 @@ Live Deployment at : http://production-bucket-aaryankumar19.s3-website-us-east-1
 This project demonstrates a **CI/CD pipeline** for deploying a Vite + React app to **Amazon S3** using **GitHub Actions**.
 
 <figure>
-  <img src="https://github.com/aaryankumar19/devops-project/blob/main/images/architecture.png" alt="draw.io ararchitecture" style="width:100%">
+  <img src="https://github.com/aaryankumar19/devops-project/blob/main/images/architecture.png" alt="Architecture Diagram" width="100%">
   <figcaption>Devops project basic architecture</figcaption>
 </figure>
+
+## 📦 Tech Stack
+
+- ⚛️ React + Vite
+- ☁️ AWS S3 (static hosting)
+- 🔐 IAM (permissions)
+- 🤖 GitHub Actions (CI/CD)
+- 🐰 Bun (JavaScript package manager)
 
 ## 📌 Overview
 
@@ -37,7 +45,7 @@ Every time you push code to the `main` branch, GitHub Actions automatically:
       "Sid": "AllowGitHubActionsDeploy",
       "Effect": "Allow",
       "Principal": {
-        "AWS": "<IAM user ARN"
+        "AWS": "<IAM user ARN>"
       },
       "Action": "s3:*",
       "Resource": "<Bucket ARN>"
@@ -75,7 +83,11 @@ Every time you push code to the `main` branch, GitHub Actions automatically:
 Create `.github/workflows/main.yml` in your repository:
 Refer this yml file: [deploy.yml](/.github/workflows/deploy.yml)
 
+You can find the GitHub workflows by clicking the link : [GitHub Workflow Status](https://github.com/aaryankumar19/devops-project/actions)
+
 ## 🚀 Result
+
+
 After pushing to `main` branch, your site will be automatically deployed and available at:
 ```
 http://your-bucket-name.s3-website-your-region.amazonaws.com
@@ -84,8 +96,7 @@ http://your-bucket-name.s3-website-your-region.amazonaws.com
 
 or
 
-To get this link, head to your Buckets > your-bucket > Properties.
-In static website hosting, click on the bucket link.
+To find your website URL, go to S3 > your-bucket > Properties, and scroll down to Static website hosting.
 
 ## ⚠️ Attention
-I have used [bun](https://bun.com/) instead of npm, because with npm I was facing some issues creating a vite application. Bun is a npm alternative and a bit faster than the npm. I works the same way as npm. I have also added the automatic installation of bun in github workflow.
+I have used [*bun*](https://bun.com/) instead of **npm**, because with npm I was facing some issues creating a vite application. Bun is an alternative to npm and is generally faster. It works the same way as npm. I have also added the automatic installation of bun in github workflow.
