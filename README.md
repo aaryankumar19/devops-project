@@ -2,6 +2,7 @@
 
 <img src="https://github.com/aaryankumar19/devops-project/blob/main/images/image2.png">
 
+[HTTP] only
 Live Deployment at : http://production-bucket-aaryankumar19.s3-website-us-east-1.amazonaws.com/
 
 This project demonstrates a **CI/CD pipeline** for deploying a Vite + React app to **Amazon S3** using **GitHub Actions**.
